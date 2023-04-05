@@ -136,5 +136,3 @@ The key's randomart image is:
 
 
 
-
-feature-D
