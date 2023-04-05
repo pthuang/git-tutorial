@@ -141,3 +141,5 @@ The key's randomart image is:
 
 -feature-A
 -fix-B
+
+-feature-C
