@@ -1,6 +1,12 @@
 # Git环境配置
 
+[TOC]
+
+
+
 ## 一、生成SSH密钥对
+
+[仓库地址](https://github.com/pthuang/git-tutorial)
 
 ### 1. 下载并安装git
 
@@ -126,7 +132,6 @@ The key's randomart image is:
 [解决git@github.com: Permission denied (publickey). Could not read from remote repository](https://blog.csdn.net/ywl470812087/article/details/104459288)
 
 [Git下载、安装及环境配置(超详细)](https://blog.csdn.net/weixin_43951315/article/details/104921428?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-104921428-blog-83032408.235^v27^pc_relevant_multi_platform_whitelistv3&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-104921428-blog-83032408.235^v27^pc_relevant_multi_platform_whitelistv3&utm_relevant_index=1)
-
 
 
 
