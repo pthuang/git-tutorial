@@ -136,3 +136,118 @@ The key's randomart image is:
 
 
 
+
+## 四、git指令学习
+
+### 1. 基本操作
+
+```shell
+# 新建路径(文件夹)
+mkdir repo_name
+
+# 切换路径
+cd ./repo_name
+
+# 初始化本地仓库
+git init 
+
+# 查看仓库状态
+git status 
+
+# 创建文件 查看文件/路径的时间属性，不存在则创建空白文件
+touch readme.md
+
+# 向暂存区添加文件 
+git add readme.md
+
+# 提交，即记录工作树中所有文件的当前状态
+git commit -m "add new file readme.md"
+
+# 查看日志
+git log 
+
+# 只显示第一行日志
+git log --pretty=short
+
+# 只显示指定目录的日志
+git log readme.md 
+
+# 只显示指定文件提交带来的改动
+git log -p readme.md 
+
+# 查看工作树和暂存区的差别
+git diff
+
+# 查看工作树和最新提交的差别，HEAD指的是当前分支最新一次提交的指针
+git diff HEAD 
+```
+
++   一个好习惯：
+
+    在执行git commit之前，先执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别，确认完毕之后再进行提交。
+
+### 2. 分支操作
+
+```shell
+# 显示分支预览
+git branch 
+
+# 新建分支
+git branch branch_name
+
+# 切换分支
+git checkout branch_name
+
+# 新建并切换分支
+git checkout -b branch_name 
+
+# 合并分支branch_name到当前分支
+git merge --no-ff branch_name
+
+# 以图表形式查看日志
+git log --graph
+
+# 查看当前仓库相关操作日志（获取哈希值）
+git reflog 
+
+# 回溯到某一版本
+git reset --hard hash_value
+
+# 修改“提交信息” : 须学会vim操作
+git commit --amend 
+
+
+
+
+```
+
+
+
+
+
+### 3. 更改提交
+
+
+
+
+
+
+
+### 4. 推送
+
+
+
+
+
+
+
+
+
+### 5. 获取
+
+
+
+
+
+
+
