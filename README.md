@@ -227,28 +227,41 @@ The key's randomart image is:
 
 ### 2. 分支操作
 
-```shell
-# 显示分支预览
-git branch 
++   显示分支预览
 
-# 新建分支
-git branch branch_name
+    ```shell
+    git branch
+    ```
 
-# 切换分支
-git checkout branch_name
++   新建分支
 
-# 新建并切换分支
-git checkout -b branch_name 
+    ```shell
+    git branch branch_name
+    ```
 
-# 合并分支branch_name到当前分支
-git merge --no-ff branch_name
++   切换分支
 
-# 以图表形式查看日志
-git log --graph
+    ```shell
+    git checkout branch_name
+    ```
 
-```
++   新建并切换分支
 
+    ```shell
+    git checkout -b branch_name 
+    ```
 
++   合并分支branch_name到当前分支
+
+    ```shell
+    git merge --no-ff branch_name
+    ```
+
++   以图表形式查看日志
+
+    ```shell
+    git log --graph
+    ```
 
 
 
@@ -334,10 +347,10 @@ git log --graph
     ```shell
     # 切换分支
     git checkout branch-A
-
+    
     # 推送至github 同名分支
     git push -u origin branch-A
-```
+
 
 
 
@@ -349,7 +362,6 @@ git log --graph
 
     ```shell
     git clone git@github.com:user_name/repostory_name.git
-    ```
 
 +   获取远程分支
 
