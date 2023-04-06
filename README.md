@@ -141,50 +141,89 @@ The key's randomart image is:
 
 ### 1. 基本操作
 
-```shell
-# 新建路径(文件夹)
-mkdir repo_name
++   新建路径(文件夹)
 
-# 切换路径
-cd ./repo_name
+    ```shell
+    mkdir repo_name
+    ```
 
-# 初始化本地仓库
-git init 
++   切换路径
 
-# 查看仓库状态
-git status 
+    ```shell
+    cd ./repo_name
+    ```
 
-# 创建文件 查看文件/路径的时间属性，不存在则创建空白文件
-touch readme.md
++   初始化本地仓库
 
-# 向暂存区添加文件 
-git add readme.md
+    ```shell
+    git init 
+    ```
 
-# 提交，即记录工作树中所有文件的当前状态
-git commit -m "add new file readme.md"
++   查看仓库状态
 
-# 查看日志
-git log 
+    ```shell
+    git status 
+    ```
 
-# 只显示第一行日志
-git log --pretty=short
++   创建文件 查看文件/路径的时间属性，不存在则创建空白文件
 
-# 只显示指定目录的日志
-git log readme.md 
+    ```shell
+    touch readme.md
+    ```
 
-# 只显示指定文件提交带来的改动
-git log -p readme.md 
++   向暂存区添加文件 
 
-# 查看工作树和暂存区的差别
-git diff
+    ```shell
+    git add readme.md
+    ```
 
-# 查看工作树和最新提交的差别，HEAD指的是当前分支最新一次提交的指针
-git diff HEAD 
-```
++   提交，即记录工作树中所有文件的当前状态
 
-+   一个好习惯：
+    ```shell
+    git commit -m "add new file readme.md"
+    ```
 
-    在执行git commit之前，先执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别，确认完毕之后再进行提交。
++   查看日志
+
+    ```shell
+    git log 
+    ```
+
++   只显示第一行日志
+
+    ```shell
+    git log --pretty=short
+    ```
+
++   只显示指定目录/文件的日志
+
+    ```shell
+    git log readme.md 
+    ```
+
++   只显示指定文件提交带来的改动
+
+    ```shell
+    git log -p readme.md
+    ```
+
++   查看工作树和暂存区的差别
+
+    ```shell
+    git diff
+    ```
+
++   查看工作树和最新提交的差别，HEAD指的是当前分支最新一次提交的指针
+
+    ```shell
+    git diff HEAD 
+    ```
+
+    +   一个好习惯：
+
+        **在执行git commit之前，先执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别，确认完毕之后再进行提交。**
+
+
 
 ### 2. 分支操作
 
@@ -207,18 +246,6 @@ git merge --no-ff branch_name
 # 以图表形式查看日志
 git log --graph
 
-# 查看当前仓库相关操作日志（获取哈希值）
-git reflog 
-
-# 回溯到某一版本
-git reset --hard hash_value
-
-# 修改“提交信息” : 须学会vim操作
-git commit --amend 
-
-
-
-
 ```
 
 
@@ -227,31 +254,130 @@ git commit --amend
 
 ### 3. 更改提交
 
++   查看当前仓库相关操作日志（获取哈希值）
 
+    ```shell
+    git reflog s
+    ```
 
-```shell
++   回溯到某一版本
 
-```
+    ```shell
+    git reset --hard hash_valuesh
+    ```
 
++   消除修改冲突
 
+    手动修改，然后提交修改；
+
++   修改“提交信息” : 须学会vim操作
+
+    ```shell
+    git commit --amend 
+    ```
+
++   压缩历史(将两次修改合并)
+
+    ```shell
+    # 1.先提交修改
+    git commit -am "modify log0"
+    # 2.再次修改后提交
+    git commit -am "modify log1"
+    # 3.更改历史, 选择包含HEAD(最新提交)在内的两个最新历史记录为对象
+    git rebase -i HEAD~2
+    ```
+
+    +   在编辑器中将最新的历史记录改为fixup
+
+        ```markdown
+        pick 7a34294 modify log0
+        pick 6fba227 modify log1
+        ```
+
+        改为：
+
+        ```markdown
+        pick 7a34294 modify log0
+        fixup 6fba227 modify log1
+        ```
+
+    +   保存并关闭编辑器（ESC + ZZ）
+
+    +   查看最新的哈希值
+
+        ```shell
+        git log --graph
+        ```
+
+        
 
 ### 4. 推送
 
-```shell
++   新建github仓库
+    +   仓库名与本地仓库名保持一致；
+    +   不要勾选Initialize the repostory with a README选项；
 
++   添加远程仓库
+
+    ```shell
+    git remote add origin git@github.com:user_name/repostory_name.git
+    ```
+
++   推送至master分支
+
+    ```shell
+    git push -u origin master 
+    ```
+
++   推送其他分支
+
+    ```shell
+    # 切换分支
+    git checkout branch-A
+
+    # 推送至github 同名分支
+    git push -u origin branch-A
 ```
-
-
-
-
 
 
 
 ### 5. 获取
 
-```shell
+1.   以第二开发者角度理解
 
-```
++   获取远程仓库(本地不存在仓库)
+
+    ```shell
+    git clone git@github.com:user_name/repostory_name.git
+    ```
+
++   获取远程分支
+
+    ```shell
+    # 在本地仓库中新建branch_name分支，来源是github中的branch_name分支
+    git checkout -b branch_name origin/branch_name
+    ```
+
++   修改并提交分支
+
+    ```shell
+    # 修改后提交
+    git commit -am "modify log"
+    ```
+
++   推送分支
+
+    ```shell
+    git push 
+    ```
+
+2.   以第一开发者角度理解
+
++   获取最新的远程仓库分支
+
+    ```shell
+    git pull 
+    ```
 
 
 
