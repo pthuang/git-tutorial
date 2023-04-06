@@ -229,13 +229,17 @@ git commit --amend
 
 
 
+```shell
 
+```
 
 
 
 ### 4. 推送
 
+```shell
 
+```
 
 
 
@@ -245,9 +249,12 @@ git commit --amend
 
 ### 5. 获取
 
+```shell
+
+```
 
 
 
 
 
-
+未完待续......
