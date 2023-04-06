@@ -388,6 +388,43 @@ The key's randomart image is:
     git pull 
     ```
 
+### 6. 删除分支
+
++   删除本地分支
+
+    ```shell
+    # 该分支必须完全和它的上游分支merge完成,如果没有上游分支,必须要和HEAD完全merge
+    git branch --delete branch_name
+    git branch -d branch_name
+    # 下面两个等效,在不检查merge状态的情况下删除分支
+    git branch --delete --force branch_name
+    git branch -D branch_name
+    ```
+
++   删除远程分支
+
+    ```shell
+    # 同时也会删除追踪分支
+    git push origin --delete branch_name
+    ```
+
++   单独删除跟踪分支
+
+    跟踪分支：与远程分支有直接关系的本地分支；
+
+    ```shell
+    git fetch origin --prune branch_name
+    git fetch origin -p branch_name
+    ```
+
++   查看本地分支与远程分支的跟踪关系
+
+    ```shell
+    git branch -vv
+    ```
+
+
+
 
 
 
