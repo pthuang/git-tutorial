@@ -347,7 +347,6 @@ The key's randomart image is:
     ```shell
     # 切换分支
     git checkout branch-A
-    
     # 推送至github 同名分支
     git push -u origin branch-A
 
