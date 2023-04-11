@@ -408,7 +408,7 @@ The key's randomart image is:
 3.   客户端克隆远程仓库
 
      ```shell
-     # uasr_name@ip:directory/repo_name
+     # user_name@ip:directory/repo_name
      git clone git@152.168.7.303:/home/server/repo_name.git
      ```
 
