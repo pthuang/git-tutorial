@@ -350,6 +350,7 @@ The key's randomart image is:
     # 推送至github 同名分支
     git push -u origin branch-A
 
+​	
 
 ### 5. 获取
 
@@ -387,6 +388,31 @@ The key's randomart image is:
     ```shell
     git pull 
     ```
+
+### 6.Ubuntu建立远程仓库
+
+1.   切换到仓库路径
+
+     ```
+     cd ./home/server
+     ```
+
+2.   建立并初始化仓库
+
+     ```shell
+     git init --bare repo_name
+     ```
+
+     
+
+3.   客户端克隆远程仓库
+
+     ```shell
+     # user_name@ip:directory/repo_name
+     git clone git@152.168.7.303:/home/server/repo_name.git
+     ```
+
+     
 
 ### 6. 删除分支
 
